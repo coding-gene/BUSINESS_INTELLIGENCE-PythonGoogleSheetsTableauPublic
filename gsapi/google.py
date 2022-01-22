@@ -3,7 +3,7 @@ from google.oauth2 import service_account
 from googleapiclient.discovery import build
 
 
-class Authentication:
+class GoogleAuthentication:
 
     def __init__(self):
         self.SCOPES = ['https://www.googleapis.com/auth/spreadsheets']
