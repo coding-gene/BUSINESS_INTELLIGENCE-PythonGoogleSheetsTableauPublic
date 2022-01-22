@@ -1,8 +1,6 @@
 from data.covid import CovidData
 from gsapi.google import GoogleAuthentication
 import logging
-import pandas as pd
-
 
 logging.basicConfig(format='%(asctime)s %(levelname)-8s %(message)s',
                     level=logging.INFO,
