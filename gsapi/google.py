@@ -6,10 +6,10 @@ from googleapiclient.discovery import build
 class GoogleAuthentication:
 
     def __init__(self):
-        self.SCOPES = ['https://www.googleapis.com/auth/spreadsheets']
+        self.scopes = ['https://www.googleapis.com/auth/spreadsheets']
         self.credentials = service_account.Credentials.from_service_account_file(
             r'gsapi/credentials.json',
-            scopes=self.SCOPES)
+            scopes=self.scopes)
         self.spreadsheet_service = build('sheets', 'v4', credentials=self.credentials)
 
     def send_df_to_gsheets(self, df):
