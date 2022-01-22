@@ -14,9 +14,9 @@ class GoogleAuthentication:
 
     def send_df_to_gsheets(self, df):
         spreadsheet_id = '1wJv40IjpE-8tU_SJJ8y17wX1CL2S2yzwtoqrH0pVR7U'
-        body_clear = {}
 
-        clear = self.spreadsheet_service.spreadsheets().values().clear(
+        body_clear = {}
+        self.spreadsheet_service.spreadsheets().values().clear(
             spreadsheetId=spreadsheet_id,
             body=body_clear,
             range='A2:Z').execute()
@@ -24,7 +24,7 @@ class GoogleAuthentication:
         time.sleep(0.5)
 
         body_insert = {'values': df.values.tolist()}
-        insert = self.spreadsheet_service.spreadsheets().values().append(
+        self.spreadsheet_service.spreadsheets().values().append(
             spreadsheetId=spreadsheet_id,
             body=body_insert,
             valueInputOption='USER_ENTERED',
