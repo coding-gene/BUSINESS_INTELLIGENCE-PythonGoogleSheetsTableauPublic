@@ -1,6 +1,7 @@
 from data.covid import CovidData
 from gsapi.google import Authentication
 import logging
+import pandas as pd
 
 
 logging.basicConfig(format='%(asctime)s %(levelname)-8s %(message)s',
@@ -12,7 +13,7 @@ try:
     cData = CovidData()
     gApi = Authentication()
 
-    gApi.send_df_to_gsheets()
-    #  print(cData.get_data())
+    df = cData.get_data()
+    gApi.send_df_to_gsheets(df)
 except Exception:
     logging.exception('t')
